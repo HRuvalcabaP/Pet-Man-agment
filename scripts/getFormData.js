@@ -6,6 +6,8 @@ btnData.addEventListener('click',(e)=>{
     getDataForm();
 })
 
+let finalData = {};
+
 
 function getDataForm(){
     const petOwner = document.getElementById('petOwer').value;
@@ -15,15 +17,23 @@ function getDataForm(){
     const breed = document.getElementById('breed').value;
     const comments = document.getElementById('comments').value;
 
-    const finalData = {
-        petOwner:petOwner,
-        phone:phone,
-        petName:petName,
-        petAge:petAge,
-        breed:breed,
-        comments:comments
-    }
+    console.log("Data vacía", finalData);
 
+    finalData.petOwner = petOwner;
+    finalData.phone = phone;
+    finalData.petName = petName;
+    finalData.petAge = petAge;
+    finalData.breed = breed;
+    finalData.comments = comments;
+    
+
+    /* if(finalData.petOwner === "" || finalData.phone === "" || finalData.petName === "" || finalData.petAge === "" || finalData.breed === "" || finalData.comments === ""){
+        btnData.setAttribute("disabled", true);
+    }
+    else{
+        return null;
+    }
+ */
     saveData(finalData);
     cleanInputs();
 }
