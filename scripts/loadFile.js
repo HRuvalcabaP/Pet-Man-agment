@@ -8,7 +8,14 @@ upload.addEventListener('change', ()=>{
 
     fr.onload = function(){
         let result = fr.result;
-        console.log(result);
+
+        console.log(typeof result);
+
+        localStorage.setItem('PetInformation', result)
+
+        //console.log(JSON.parse(finalResult));
+        
+
     }
 })
 
